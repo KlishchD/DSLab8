@@ -3,14 +3,16 @@ package org.example.Core.Repository;
 import org.example.Core.Models.Artist;
 import org.example.Core.Models.Album;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBRepository implements Repository{
+public class DBRepository extends UnicastRemoteObject implements Repository{
     private Connection connection;
 
-    public DBRepository(String url, String user, String password) {
+    public DBRepository(String url, String user, String password) throws RemoteException {
         try {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url, user, password);

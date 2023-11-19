@@ -10,6 +10,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.rmi.RemoteException;
 import java.util.List;
 
 public class RemoteServerRepository implements Repository {
@@ -36,52 +37,52 @@ public class RemoteServerRepository implements Repository {
     }
 
     @Override
-    public int countArtists() {
+    public int countArtists() throws RemoteException {
         return repository.countArtists();
     }
 
     @Override
-    public int countAlbums() {
+    public int countAlbums() throws RemoteException  {
         return repository.countAlbums();
     }
 
     @Override
-    public void insertArtist(Artist artist) {
+    public void insertArtist(Artist artist) throws RemoteException  {
         repository.insertArtist(artist);
     }
 
     @Override
-    public void insertAlbum(int artistId, Album album) {
+    public void insertAlbum(int artistId, Album album) throws RemoteException  {
         repository.insertAlbum(artistId, album);
     }
 
     @Override
-    public void deleteArtist(int id) {
+    public void deleteArtist(int id) throws RemoteException  {
         repository.deleteArtist(id);
     }
 
     @Override
-    public void deleteAlbum(int id) {
+    public void deleteAlbum(int id) throws RemoteException  {
         repository.deleteAlbum(id);
     }
 
     @Override
-    public Artist getArtists(int id) {
+    public Artist getArtists(int id) throws RemoteException  {
         return repository.getArtists(id);
     }
 
     @Override
-    public Album getAlbum(int id) {
+    public Album getAlbum(int id) throws RemoteException  {
         return repository.getAlbum(id);
     }
 
     @Override
-    public List<Artist> getArtists() {
+    public List<Artist> getArtists() throws RemoteException  {
         return repository.getArtists();
     }
 
     @Override
-    public List<Album> getAlbums() {
+    public List<Album> getAlbums() throws RemoteException  {
         return repository.getAlbums();
     }
 
