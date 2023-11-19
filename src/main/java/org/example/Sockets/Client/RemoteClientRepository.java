@@ -3,7 +3,7 @@ package org.example.Sockets.Client;
 import org.example.Core.Models.Album;
 import org.example.Core.Models.Artist;
 import org.example.Core.Repository.Repository;
-import org.example.Sockets.Utils.Serialization;
+import org.example.Utils.Serialization;
 
 import java.io.*;
 import java.net.Socket;

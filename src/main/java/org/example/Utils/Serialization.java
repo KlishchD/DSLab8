@@ -1,4 +1,4 @@
-package org.example.Sockets.Utils;
+package org.example.Utils;
 
 import java.io.*;
 import java.util.Base64;
