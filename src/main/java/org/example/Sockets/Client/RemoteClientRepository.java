@@ -89,7 +89,7 @@ public class RemoteClientRepository implements Repository {
     }
 
     @Override
-    public Artist getArtist(int id) {
+    public Artist getArtists(int id) {
         try {
             out.writeInt(6);
 
@@ -122,7 +122,7 @@ public class RemoteClientRepository implements Repository {
     }
 
     @Override
-    public List<Artist> getArtist() {
+    public List<Artist> getArtists() {
         try {
             out.writeInt(8);
 

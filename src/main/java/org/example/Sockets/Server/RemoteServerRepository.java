@@ -66,8 +66,8 @@ public class RemoteServerRepository implements Repository {
     }
 
     @Override
-    public Artist getArtist(int id) {
-        return repository.getArtist(id);
+    public Artist getArtists(int id) {
+        return repository.getArtists(id);
     }
 
     @Override
@@ -76,8 +76,8 @@ public class RemoteServerRepository implements Repository {
     }
 
     @Override
-    public List<Artist> getArtist() {
-        return repository.getArtist();
+    public List<Artist> getArtists() {
+        return repository.getArtists();
     }
 
     @Override
@@ -138,7 +138,7 @@ public class RemoteServerRepository implements Repository {
                     }
                     case 6 -> {
                         int id = in.readInt();
-                        Artist artist = repository.getArtist(id);
+                        Artist artist = repository.getArtists(id);
 
                         String bytes = Serialization.toString(artist);
                         out.writeInt(bytes.length());
@@ -157,7 +157,7 @@ public class RemoteServerRepository implements Repository {
                         yield true;
                     }
                     case 8 -> {
-                        List<Artist> artists = repository.getArtist();
+                        List<Artist> artists = repository.getArtists();
 
                         out.writeInt(artists.size());
 

@@ -117,7 +117,7 @@ public class DBRepository implements Repository{
     }
 
     @Override
-    public Artist getArtist(int id) {
+    public Artist getArtists(int id) {
         try {
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM (SELECT * FROM artists WHERE id = " + id + ") JOIN (SELECT id as album_id, artist_id as id, name as album_name FROM albums) USING (id)";
@@ -164,7 +164,7 @@ public class DBRepository implements Repository{
     }
 
     @Override
-    public List<Artist> getArtist() {
+    public List<Artist> getArtists() {
         try {
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM (SELECT * FROM artists) LEFT JOIN (SELECT id as album_id, artist_id as id, name as album_name FROM albums) USING (id)";

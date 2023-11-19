@@ -15,9 +15,9 @@ public interface Repository {
     void deleteArtist(int id);
     void deleteAlbum(int id);
 
-    Artist getArtist(int id);
+    Artist getArtists(int id);
     Album getAlbum(int id);
 
-    List<Artist> getArtist();
+    List<Artist> getArtists();
     List<Album> getAlbums();
 }

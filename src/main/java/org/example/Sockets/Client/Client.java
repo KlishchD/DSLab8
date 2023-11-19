@@ -22,10 +22,10 @@ public class Client {
             repository.deleteArtist(1);
             repository.deleteAlbum(10);
 */
-            System.out.println("Artist: " + repository.getArtist(0));
+            System.out.println("Artist: " + repository.getArtists(0));
             System.out.println("Album: " + repository.getAlbum(13));
 
-            System.out.println("Artists: " + repository.getArtist());
+            System.out.println("Artists: " + repository.getArtists());
             System.out.println("Albums: " + repository.getAlbums());
         } catch (IOException e) {
             throw new RuntimeException(e);
